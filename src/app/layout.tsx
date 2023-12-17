@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
 import Head from "./head";
+import Footer from "./footer";
 
 export const metadata: Metadata = {
   title: "Countries app",
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <Head />
       {children}
+      <Footer />
     </html>
   );
 }
