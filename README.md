@@ -1,4 +1,4 @@
-<h1 align="center">:elephant: API PHPuro</h1>
+<h1 align="center">:world_map: Countries</h1>
 
 ## :dart: Project Status
 
