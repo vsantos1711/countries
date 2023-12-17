@@ -16,19 +16,15 @@ A simple Next.js application that provides a comprehensive overview of countries
 
 ## :rocket: Running the project
 
-Clone this repository.
+1. Clone the repository and install dependencies:
 
-```bash
-git clone https://github.com/vsantos1711/countries
-```
-Install the dependencies.
-
-```bash
+```shell
+git clone https://github.com/vsantos1711/countries.git && cd countries && p
 pnpm install
 ```
-Start the server.
+2. Run the setup script, which takes care of installing dependencies, building packages and setting up the workspace:
 
-```bash
+```shell
 pnpm run dev
 ```
 
