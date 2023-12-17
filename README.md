@@ -32,7 +32,7 @@ Start the server.
 pnpm start
 ```
 
-## :handshake: Colaboradores
+## :handshake: Contributers
 
 <table>
   <tr>
