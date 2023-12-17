@@ -29,7 +29,7 @@ pnpm install
 Start the server.
 
 ```bash
-pnpm start
+pnpm run dev
 ```
 
 ## :handshake: Contributers
