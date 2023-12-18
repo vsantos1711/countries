@@ -1,5 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
+import { IoMoon, IoSunny } from "react-icons/io5";
 
 export default function Btn() {
   const { theme, setTheme } = useTheme();
@@ -8,5 +9,12 @@ export default function Btn() {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
-  return <button onClick={toggleTheme}>Dark Mode</button>;
+  const icon = theme === "light" ? <IoMoon /> : <IoSunny />;
+  const modeText = theme === "light" ? "Dark mode" : "Light mode";
+
+  return (
+    <button className="flex items-center gap-1" onClick={toggleTheme}>
+      {icon} {modeText}
+    </button>
+  );
 }
