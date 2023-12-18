@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 import Head from "./head";
 import Footer from "./footer";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "Countries app",
@@ -17,9 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head />
-      {children}
-      <Footer />
+      <body>
+        <Providers>
+          <Head />
+          {children}
+          <Footer />
+        </Providers>
+      </body>
     </html>
   );
 }
