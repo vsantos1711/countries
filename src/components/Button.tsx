@@ -13,7 +13,11 @@ export default function Btn() {
   const modeText = theme === "light" ? "Dark mode" : "Light mode";
 
   return (
-    <button className="flex items-center gap-1" onClick={toggleTheme}>
+    <button
+      className="flex items-center gap-1"
+      onClick={toggleTheme}
+      suppressHydrationWarning
+    >
       {icon} {modeText}
     </button>
   );

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
-import Head from "./head";
-import Footer from "./footer";
-import Providers from "./providers";
+import Head from "../components/Head";
+import Footer from "../components/Footer";
+import Providers from "../components/Providers";
 
 export const metadata: Metadata = {
   title: "Countries app",
