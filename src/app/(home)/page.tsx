@@ -9,17 +9,18 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen dark:bg-gray-800 mx-auto ">
-      {countries.map((country: any) => (
-        <Card
-          key={country.name.common}
-          img={country.flags.svg}
-          name={country.name.common}
-          population={country.population}
-          region={country.region}
-          capital={country.capital}
-          link={`/country/${country.name.common}`}
-        />
-      ))}
+      <div className="flex justify-center items-center flex-wrap gap-4 py-5 px-10">
+        {countries.map((country: any) => (
+          <Card
+            key={country.name.common}
+            img={country.flags.svg}
+            name={country.name.common}
+            population={country.population}
+            region={country.region}
+            capital={country.capital}
+          />
+        ))}
+      </div>
     </main>
   );
 }

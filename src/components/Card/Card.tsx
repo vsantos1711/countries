@@ -1,8 +1,9 @@
+import Image from "next/image";
+
 type cardProps = {
   name: string;
   population: string;
   img: string;
-  link: string;
   region: string;
   capital: string;
 };
@@ -11,30 +12,34 @@ export default function Card({
   name,
   population,
   img,
-  link,
   region,
   capital,
 }: cardProps) {
   return (
-    <div>
-      <img src={img} alt={name} className="max-w-[220px]" />
-      <h1>
-        <strong>Name: </strong>
-        {name}
-      </h1>
-      <p>
-        <strong>Population: </strong>
-        {population}
-      </p>
-      <p>
-        <strong>Region: </strong>
-        {region}
-      </p>
-      <p>
-        <strong>Capital: </strong>
-        {capital}
-      </p>
-      <a href={link}>Link</a>
+    <div className="bg-white rounded flex flex-col shadow flex-wrap w-60 text-slate-700 dark:bg-gray-900 dark:text-white">
+      <div className="relative w-full h-40 overflow-hidden rounded">
+        <Image
+          src={img}
+          alt={name}
+          fill
+          className="object-cover border border-gray-200 dark:border-none rounded"
+        />
+      </div>
+      <div className="px-4 py-2">
+        <h1>{name}</h1>
+        <p>
+          <strong>Population: </strong>
+          {population}
+        </p>
+        <p>
+          <strong>Region: </strong>
+          {region}
+        </p>
+        <p>
+          <strong>Capital: </strong>
+          {capital}
+        </p>
+      </div>
     </div>
   );
 }
