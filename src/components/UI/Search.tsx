@@ -1,4 +1,8 @@
-export default function SearchBar({ setCountry }: any) {
+type SearchBarProps = {
+  setCountry: (country: string) => void;
+};
+
+export default function SearchBar({ setCountry }: SearchBarProps) {
   return (
     <input
       type="text"
