@@ -8,7 +8,7 @@ export default function Select({ setRegion }: SelectPros) {
       suppressHydrationWarning
       name="regions"
       id="regions"
-      className="px-2 rounded-md border border-slate-200 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100 "
+      className=" max-w-sm p-2 rounded-md border border-slate-200 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100 "
       onChange={({ target }) => setRegion(target.value)}
     >
       <option value="">Filter by region</option>

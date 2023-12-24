@@ -31,10 +31,7 @@ export default function CountriesList({ data }: CountriesListProp) {
         <SearchBar setCountry={setFilterCountry} />
         <Select setRegion={setRegion} />
       </div>
-      <div
-        className=" justify-center flex flex-wrap gap-5 py-5"
-        suppressHydrationWarning
-      >
+      <div className=" justify-center flex flex-wrap gap-5 py-5">
         {filteredCountries.map((country: CountryProp) => (
           <Card
             key={country.name.common}

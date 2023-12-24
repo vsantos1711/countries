@@ -16,9 +16,10 @@ export default function Card({
   capital,
 }: cardProps) {
   return (
-    <div className="bg-white rounded flex flex-col shadow w-[240px] text-slate-700 dark:bg-gray-900 dark:text-white">
+    <div className="bg-white rounded flex flex-col shadow w-[240px] text-slate-700 dark:bg-gray-900 dark:text-white transition-opacity animate-fade-in">
       <div className="relative h-40">
         <Image
+          priority
           src={img}
           alt={name}
           fill
