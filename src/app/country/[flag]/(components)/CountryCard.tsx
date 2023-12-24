@@ -67,7 +67,7 @@ export default async function CountryCard({ countryCode }: CountryCard) {
           <strong>Border Countries: </strong>
           {countryInfo.borders.map((border: string) => (
             <Link href={`${border}`} key={border}>
-              <span className="border border-gray-200 dark:border-none rounded px-2 py-1">
+              <span className="border border-gray-200  rounded px-2 py-1">
                 {border}
               </span>
             </Link>
