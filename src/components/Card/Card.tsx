@@ -2,7 +2,7 @@ import Image from "next/image";
 
 type cardProps = {
   name: string;
-  population: string;
+  population: number;
   img: string;
   region: string;
   capital: string;
@@ -15,8 +15,10 @@ export default function Card({
   region,
   capital,
 }: cardProps) {
+  const numberFormat = Intl.NumberFormat("en", { notation: "compact" });
+
   return (
-    <div className="bg-white rounded flex flex-col shadow w-[240px] text-slate-700 dark:bg-gray-900 dark:text-white transition-opacity animate-fade-in">
+    <div className="bg-white rounded flex  flex-col shadow text-slate-700 dark:bg-gray-900 dark:text-white transition-opacity animate-fade-in">
       <div className="relative h-40">
         <Image
           priority
@@ -30,7 +32,7 @@ export default function Card({
         <h1>{name}</h1>
         <p>
           <strong>Population: </strong>
-          {population}
+          {numberFormat.format(population)}
         </p>
         <p>
           <strong>Region: </strong>
