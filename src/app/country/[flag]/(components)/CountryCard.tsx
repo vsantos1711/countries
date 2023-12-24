@@ -13,9 +13,9 @@ type CountryCard = {
 };
 
 export default async function CountryCard({ countryCode }: CountryCard) {
-  const [countryInfo]: any = await getCountryInfo(countryCode);
-  const [currencyCode] = countryInfo.currencies
-    ? Object.keys(countryInfo.currencies)
+  const [country] = await getCountryInfo(countryCode);
+  const [currencyCode] = country.currencies
+    ? Object.keys(country.currencies)
     : [""];
 
   return (
@@ -23,57 +23,57 @@ export default async function CountryCard({ countryCode }: CountryCard) {
       <div className="relative h-60 md:h-80">
         <Image
           priority
-          src={countryInfo.flags.svg}
-          alt={countryInfo.name}
+          src={country.flags.svg}
+          alt={country.name}
           fill
           className="shadow-lg border border-gray-200 dark:border-none rounded "
         />
       </div>
       <div className="flex flex-col w-full gap-2">
         <h1 className="text-4xl font-semibold shadow-white">
-          {countryInfo.name.common}
+          {country.name.common}
         </h1>
         <p>
           <strong>Native name: </strong>
-          {countryInfo.population}
+          {country.population}
         </p>
         <p>
           <strong>Population: </strong>
-          {countryInfo.name.official}
+          {country.name.official}
         </p>
         <p>
           <strong>Region: </strong>
-          {countryInfo.region}
+          {country.region}
         </p>
         <p>
           <strong>Sub Region: </strong>
-          {countryInfo.subregion ?? "unknown"}
+          {country.subregion ?? "unknown"}
         </p>
         <p>
           <strong>Capital: </strong>
-          {countryInfo.capital ?? "unknown"}
+          {country.capital ?? "unknown"}
         </p>
         <p>
           <strong>Top Level Domain: </strong>
-          {countryInfo.tld}
+          {country.tld}
         </p>
         <p>
           <strong>Currencies: </strong>
-          {countryInfo.currencies
-            ? countryInfo.currencies[currencyCode].name
+          {country.currencies
+            ? country.currencies[currencyCode].name
             : "unknown"}
         </p>
         <p>
           <strong>Languages: </strong>
-          {countryInfo.languages
-            ? Object.values(countryInfo.languages).join(", ")
+          {country.languages
+            ? Object.values(country.languages).join(", ")
             : "unknown"}
         </p>
         <div>
           <strong>Border Countries: </strong>
           <div className="flex flex-wrap gap-3 items-center py-1">
-            {countryInfo.borders
-              ? countryInfo.borders.map((border: string) => (
+            {country.borders
+              ? country.borders.map((border: string) => (
                   <Link href={`${border}`} key={border}>
                     <span className=" border border-gray-400  rounded px-2 py-1">
                       {border}

@@ -4,7 +4,7 @@ async function getCountries() {
   const res = await fetch("https://restcountries.com/v3.1/all");
   return res.json();
 }
-export type CountryProp = {
+export type Country = {
   flags: {
     svg: string;
   };
@@ -18,7 +18,7 @@ export type CountryProp = {
 };
 
 export default async function Home() {
-  const countries: CountryProp[] = await getCountries();
+  const countries: Country[] = await getCountries();
 
   return (
     <main className="min-h-screen dark:bg-gray-800 py-14 ">

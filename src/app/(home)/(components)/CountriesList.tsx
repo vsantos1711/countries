@@ -2,12 +2,12 @@
 import Card from "@/components/Card/Card";
 import SearchBar from "@/components/UI/Search";
 import { useState } from "react";
-import { CountryProp } from "../page";
+import { Country } from "../page";
 import Select from "@/components/UI/Select";
 import SorterSelect from "@/components/UI/SorterSelect";
 
 type CountriesListProp = {
-  data: CountryProp[];
+  data: Country[];
 };
 
 export default function CountriesList({ data }: CountriesListProp) {
@@ -15,7 +15,7 @@ export default function CountriesList({ data }: CountriesListProp) {
   const [region, setRegion] = useState("");
   const [sorter, setSorter] = useState("");
 
-  const filteredCountries = data.filter((country: CountryProp) => {
+  const filteredCountries = data.filter((country: Country) => {
     const nameFilter = country.name.common
       .toLowerCase()
       .includes(filter.toLowerCase());
@@ -27,10 +27,7 @@ export default function CountriesList({ data }: CountriesListProp) {
     return nameFilter && regionFilter;
   });
 
-  const sortByAlphabetic = (
-    countryOne: CountryProp,
-    countryTwo: CountryProp
-  ) => {
+  const sortByAlphabetic = (countryOne: Country, countryTwo: Country) => {
     const nameA = countryOne.name.common.toUpperCase();
     const nameB = countryTwo.name.common.toUpperCase();
 
@@ -40,10 +37,7 @@ export default function CountriesList({ data }: CountriesListProp) {
     return 0;
   };
 
-  const sortByPopulation = (
-    countryOne: CountryProp,
-    countryTwo: CountryProp
-  ) => {
+  const sortByPopulation = (countryOne: Country, countryTwo: Country) => {
     if (countryOne.population > countryTwo.population) return -1;
     if (countryOne.population < countryTwo.population) return 1;
 
@@ -62,7 +56,7 @@ export default function CountriesList({ data }: CountriesListProp) {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 py-5">
         {filteredCountries
           .sort(sorter === "population" ? sortByPopulation : sortByAlphabetic)
-          .map((country: CountryProp) => (
+          .map((country: Country) => (
             <Card
               key={country.name.common}
               img={country.flags.svg}
