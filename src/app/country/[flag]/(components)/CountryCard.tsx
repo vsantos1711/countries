@@ -14,7 +14,10 @@ type CountryCard = {
 
 export default async function CountryCard({ countryCode }: CountryCard) {
   const [countryInfo]: any = await getCountryInfo(countryCode);
-  const [currencyCode] = Object.keys(countryInfo.currencies);
+  const [currencyCode] = countryInfo.currencies
+    ? Object.keys(countryInfo.currencies)
+    : [""];
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
       <div className="relative h-60 md:h-80">
@@ -44,11 +47,11 @@ export default async function CountryCard({ countryCode }: CountryCard) {
         </p>
         <p>
           <strong>Sub Region: </strong>
-          {countryInfo.subregion}
+          {countryInfo.subregion ?? "unknown"}
         </p>
         <p>
           <strong>Capital: </strong>
-          {countryInfo.capital}
+          {countryInfo.capital ?? "unknown"}
         </p>
         <p>
           <strong>Top Level Domain: </strong>
@@ -56,23 +59,30 @@ export default async function CountryCard({ countryCode }: CountryCard) {
         </p>
         <p>
           <strong>Currencies: </strong>
-          {countryInfo.currencies[currencyCode].name} - (
-          {countryInfo.currencies[currencyCode].symbol})
+          {countryInfo.currencies
+            ? countryInfo.currencies[currencyCode].name
+            : "unknown"}
         </p>
         <p>
           <strong>Languages: </strong>
-          {Object.values(countryInfo.languages).join(", ")}
+          {countryInfo.languages
+            ? Object.values(countryInfo.languages).join(", ")
+            : "unknown"}
         </p>
-        <p>
+        <div>
           <strong>Border Countries: </strong>
-          {countryInfo.borders.map((border: string) => (
-            <Link href={`${border}`} key={border}>
-              <span className="border border-gray-200  rounded px-2 py-1">
-                {border}
-              </span>
-            </Link>
-          ))}
-        </p>
+          <div className="flex flex-wrap gap-3 items-center py-1">
+            {countryInfo.borders
+              ? countryInfo.borders.map((border: string) => (
+                  <Link href={`${border}`} key={border}>
+                    <span className=" border border-gray-400  rounded px-2 py-1">
+                      {border}
+                    </span>
+                  </Link>
+                ))
+              : "unknown"}
+          </div>
+        </div>
       </div>
     </div>
   );
