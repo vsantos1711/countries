@@ -14,6 +14,7 @@ export type CountryProp = {
   population: string;
   region: string;
   capital: string;
+  cca3: string;
 };
 
 export default async function Home() {

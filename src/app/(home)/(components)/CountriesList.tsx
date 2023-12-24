@@ -70,6 +70,7 @@ export default function CountriesList({ data }: CountriesListProp) {
               population={+country.population}
               region={country.region}
               capital={country.capital}
+              code={country.cca3}
             />
           ))}
       </div>
