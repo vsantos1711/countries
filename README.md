@@ -1,7 +1,7 @@
 # 🗺️ Countries
 
 _A app to see infos about the countries_
-![Frame](https://raw.githubusercontent.com/vsantos1711/countries/main/public/assets/project-example.png)
+![Frame](https://raw.githubusercontent.com/vsantos1711/countries/main/assets/project-example.png)
 
 ## Project Status
 ![Frame](http://img.shields.io/static/v1?label=STATUS&message=DONE&color=GREEN&style=for-the-badge)
