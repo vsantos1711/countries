@@ -1,23 +1,20 @@
-<h1 align="center">:world_map: Countries</h1>
+# 🗺️ Countries
 
-<p align="center">
-  <i align="center">A app to see infos about the countries</i>
-  <img src="assets/project-example.png" />
-</p>
+_A app to see infos about the countries_
+![Frame](https://raw.githubusercontent.com/vsantos1711/countries/main/public/assets/project-example.png)
 
 ## Project Status
-
-<img src="http://img.shields.io/static/v1?label=STATUS&message=DONE&color=GREEN&style=for-the-badge"/>
+![Frame](http://img.shields.io/static/v1?label=STATUS&message=DONE&color=GREEN&style=for-the-badge)
 
 ## Description
 
 A simple Next.js application that provides a comprehensive overview of countries around the globe. Explore detailed information about each country, including population, area, capital, currency, and more. 
 
-##  Tools
+## Technologies Used
 
-[<img src="https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />](https://nextjs.org/)
-[<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />](https://www.typescriptlang.org/)
-[<img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />](https://tailwindcss.com/)
+- **[Next.js:](https://nextjs.org/)** The React framework used to build the Countries app, providing server-side rendering and static site generation.
+- **[TypeScript:](https://www.typescriptlang.org/)** The primary programming language for the project, ensuring type safety and enhancing code quality.
+- **[TailwindCSS:](https://tailwindcss.com/)** Utility-first CSS framework used for styling the Countries app quickly and efficiently.
 
 ##  Running the project
 
@@ -32,8 +29,7 @@ pnpm install
 ```shell
 pnpm run dev
 ```
+
 ## Contributors
 
-<a href="https://github.com/vsantos1711/countries/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=vsantos1711/countries" />
-</a>
+![Frame](https://contrib.rocks/image?repo=vsantos1711/countries)
